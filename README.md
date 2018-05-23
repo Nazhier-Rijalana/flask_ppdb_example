@@ -14,18 +14,18 @@ cara install : </br>
     11. jika sudah maka lakukan python run.py/flask run </br>
     12. taraaa flask sudah siap hehehehe </br>
 
-    untuk tambah username silahkan dengan cara berikut : </br>
-    1. jalankan perintah flask shell </br>
-    2. lalu ketik perintah berikut : </br>
-      a. from app import db </br>
-      b. from app.models import * </br>
-      c. user = User(username="",password="",Nama="") </br>
-      d. db.session.add(user) </br>
-      e. db.session.commit() </br>
+    untuk tambah username silahkan dengan cara berikut :
+    1. jalankan perintah flask shell
+    2. lalu ketik perintah berikut :
+      a. from app import db
+      b. from app.models import *
+      c. user = User(username="",password="",Nama="")
+      d. db.session.add(user)
+      e. db.session.commit()
 
-    okay fitur aplikasi ini adalah <br>
-    Crud + login </br>
-    cetak ke pdf atau langsung ke printer </br>
-    Flask menggunakan versi 1.0.2i </br>
-    WTForms </br>
-    untuk dbms lain coba dikembangkan hehehe </br>
+    okay fitur aplikasi ini adalah
+    Crud + login
+    cetak ke pdf atau langsung ke printer
+    Flask menggunakan versi 1.0.2i
+    WTForms
+    untuk dbms lain coba dikembangkan hehehe 
