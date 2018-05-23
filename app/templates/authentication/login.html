@@ -1,0 +1,52 @@
+{% extends 'base/base_login.html' %}
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %} {% endblock %}
+{%block body%}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-danger alert-dismissible" role="alert">
+          <!-- <strong>Title</strong> --> {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+      <form method="post" action="{{url_for('authentication.login')}}">
+                {{ form.hidden_tag() }}
+          <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{form.username(class="mdl-textfield__input")}}
+                    <!-- <input class="mdl-textfield__input" type="text" id="emailAddress"> -->
+                    <label class="mdl-textfield__label" for="emailAddress">Username</label>
+                </div>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                  <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      {{form.password(class="mdl-textfield__input")}}
+                    <!-- <input class="mdl-textfield__input" type="password" id="password"> -->
+                    <label class="mdl-textfield__label" for="password">Password</label>
+                  </div>
+                  {% for error in form.password.errors %}
+                  <span style="color: red;">[{{ error }}]</span>
+                  {% endfor %}
+                </div>
+              <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right">
+                <div class="row">
+                  <br>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                </div>
+              </div>
+            </div>
+              <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-10 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12 pull-right">
+                {{form.submit(class="btn btn-success")}}
+                <!-- <a class="btn btn-success" href="dashboard.html">login <i class="icon-right "></i></a> -->
+              </div>
+          </form>
+      </div>
+</div>
+{%endblock%}

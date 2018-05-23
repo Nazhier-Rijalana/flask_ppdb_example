@@ -1,0 +1,76 @@
+{% extends "base/base_dashboard.html" %}
+{% import "bootstrap/utils.html" as utils %}
+{% block title %} {%endblock%}
+{% block body %}
+<div class="panel-header panel-header-sm">
+</div>
+<br/>
+{{ utils.flashed_messages() }}
+<br/>
+{% if siswa %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> List Siswa Baru</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nama Lengkap
+                                </th>
+                                <th>
+                                    Asal Sekolah
+                                </th>
+                                <th>
+                                    Alamat
+                                </th>
+
+                                <th>
+                                    Diterima Di kelas
+                                </th>
+                                <th>
+                                    NISN
+                                </th>
+                            </thead>
+                            <tbody>
+                              {% for siswa in siswa %}
+                                <tr>
+                                    <td>
+                                      {{ siswa.id }}
+                                    </td>
+                                    <td>
+                                      {{ siswa.nama_lengkap }}
+                                    </td>
+                                    <td>
+                                      {{ siswa.asal_sekolah }}
+                                    </td>
+                                    <td>
+                                      {{ siswa.alamat }}
+                                    </td>
+                                    <td>
+                                      {{ siswa.diterima_di_kelas }}
+                                    </td>
+                                    <td>
+                                      {{ siswa.nisn }}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+</div>
+{% endblock %}
